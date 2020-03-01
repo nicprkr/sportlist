@@ -1,0 +1,300 @@
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    transition: 0.2s;
+  }
+:root {
+
+  --base-grey: 20,20,20;
+  --white: 255, 255, 255;
+  --primary: 239, 101, 101;
+}
+::selection {
+  background: rgba(var(--primary), 0.5);
+}
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+    font-family: "Merriweather", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article.post > * + *, .entry-content > * + * {
+  margin-top: 1.4em;
+} 
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/** utilities **/
+
+.text-center { text-align: center }
+.text-right { text-align: right }
+
+.mb-1 { margin-bottom: 1rem }
+.mb-2 { margin-bottom: 2rem }
+.mb-3 { margin-bottom: 3rem }
+.mb-4 { margin-bottom: 4rem }
+.mb-5 { margin-bottom: 5rem }
+
+
+.center { margin: 0 auto }
+
+.absolute { position: absolute }
+.relative { position: relative }
+
+
+
+
+/** COLORS **/
+body {
+  background: rgba(var(--base-grey), 0.025);
+}
+.site-content {
+  background: rgba(var(--white), 1);
+  border: 1px solid rgba(var(--base-grey), 0.15);
+}
+.site-header {
+  background: #f9f9f9;
+  border: 1px solid rgba(var(--base-grey), 0.15);
+}
+
+ul.header-menu .menu-item.current-menu-item a {
+  color: rgb(var(--primary));
+}
+.card {
+  border: 1px solid rgba(var(--base-grey), 0.15);
+}
+
+/** Typography **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.entry-meta,
+.site-title,
+.post-link,
+.site-description {
+  font-family: 'Oswald', sans-serif;
+}
+h2 {
+  text-transform: uppercase;
+  color: rgba(var(--base-grey), 0.5)
+}
+.site-description {
+  color: rgba(var(--base-grey), 0.75);
+  text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+  color: rgba(var(--base-grey), 1);
+  background-image: linear-gradient(rgba(var(--primary), 1),rgba(var(--primary), 1));
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  will-change: background-size;
+}
+
+a:hover {
+  background-size: 100% 88%;
+  background-image: linear-gradient(rgba(var(--primary), 0.5),rgba(var(--primary), 0.5));
+}
+a[class] {
+  text-decoration: none;
+  background-image: none;
+}
+a[class]:hover {
+  /* none */
+}
+.post-link {
+  color: rgb(var(--primary));
+}
+.post-link:hover {
+  opacity: 0.6;
+}
+.entry-meta {
+  color: rgba(var(--base-grey), 0.8);
+}
+.comments-area {
+  background: rgba(var(--base-grey), 0.025);
+  padding: 1rem;
+  border:1px solid rgba(var(--base-grey), 0.05)
+}
+form.search-form{
+  display:flex;
+}
+.button, button, input[type=submit]{
+  font-family: 'Oswald', sans-serif;
+  border: 1px solid rgb(var(--primary));
+  color: rgb(var(--primary));
+  background: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button:hover, button:hover, input[type=submit]:hover {
+  background: rgb(var(--primary));
+  color: rgb(var(--white));
+}
+input:focus, input:active {
+  outline: 2px solid rgb(var(--primary))
+}
+blockquote {
+  font-family: 'Oswald', sans-serif;
+  color: rgba(var(--base-grey), 0.575);
+  margin: 2rem 3rem 3rem;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+blockquote::before {
+  content: ' 	“ ';
+  line-height: 0.5;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14rem;
+  margin-left: -3rem;
+  position: absolute;
+  color: rgba(var(--primary), 0.275);
+}
+cite {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  margin-left: 4rem;
+}
+/** archive page **/
+.archive-description {
+  font-size: 1.5rem;
+  color: rgba(var(--base-grey), 0.5);
+  margin-bottom: 1rem;
+}
+/** to be replaced **/
+.ad {
+  background: rgba(var(--base-grey), 0.25);
+  width: 100%;
+  min-height: 250px;
+  margin-bottom: 1rem;
+}
+
+/** pagination sample **/
+ul.page-numbers {
+  list-style: none;
+  margin: 0;
+}
+
+.page-numbers:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+ul.page-numbers li {
+  display: block;
+  float: left;
+  margin: 0 4px 4px 0;
+  text-align: center;
+}
+
+.page-numbers a,
+.page-numbers span {
+  line-height: 1.6em;
+  display: block;
+  padding: 0 6px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+.page-numbers a span { padding: 0 }
+
+.page-numbers a:hover,
+.page-numbers.current,
+.page-numbers.current:hover {
+  color: #000;
+  background: #f7f7f7;
+  text-decoration: none;
+}
+
+.page-numbers:hover { text-decoration: none }
